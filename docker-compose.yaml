@@ -49,7 +49,7 @@ services:
 
   # S3-compat object storage
   storage:
-    image: minio/minio
+    image: minio/minio:latest
     environment:
       MINIO_ROOT_USER: root
       MINIO_ROOT_PASSWORD: miniopass
