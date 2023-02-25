@@ -47,7 +47,7 @@ services:
       timeout: 5s
       retries: 5
 
-  # S3-compat object storage
+  # # S3-compat object storage
   storage:
     image: minio/minio:latest
     environment:
@@ -63,8 +63,8 @@ services:
   # CloudFlare worker (handle file uploads at the edge)
   worker-upload:
     build:
-      context: ..
-      dockerfile: docker-compose/Dockerfile
+      context: mock/auth
+      dockerfile: Dockerfile
       args: []
     working_dir: /app
     environment:
