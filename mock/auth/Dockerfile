@@ -23,12 +23,12 @@
 # and doesn't have a shell to be able to run the "mkdir" command.
 FROM alpine:3.17.1 AS build
 
-RUN mkdir -p /public/.well-known
-COPY jwks.json /public/.well-known/jwks.json
+RUN mkdir -p /.well-known
+COPY jwks.json /.well-known/jwks.json
 
 # ======================================================
 
 # Web server for static JWKs file
 FROM joseluisq/static-web-server:2.14.1
 
-COPY --from=build /public/.well-known/jwks.json /public/.well-known/jwks.json
+COPY --from=build /.well-known/jwks.json /.well-known/jwks.json
