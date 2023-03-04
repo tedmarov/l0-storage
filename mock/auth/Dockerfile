@@ -20,7 +20,7 @@
 # ======================================================
 
 # Need a multi-stage build because the static-web-server image is based on scratch
-# and doesn't have a shell to be able to run the "mkdir" command.
+# and doesn't have a shell to be able to run the "mkdir" command. FOO BAR BAZ
 FROM alpine:3.17.1 AS build
 
 RUN mkdir -p /.well-known
